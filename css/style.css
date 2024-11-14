@@ -1,0 +1,114 @@
+/* Estilo para o corpo da página */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://www.papeldeparede.etc.br/fotos/wp-content/uploads/suco_de_laranja_com_laranjas.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+/* Centralização da calculadora */
+#calculator {
+  background-color: #fff3e0; /* Cor de fundo suave como suco de laranja */
+  border-radius: 10px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 3px 3px 0px black;
+}
+
+/* Título da calculadora */
+#calculator-title {
+  text-align: center;
+  color: #ff9800; /* Cor laranja para o título */
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Estilo do visor de cálculos */
+#operations {
+  background-color: #ffeb3b; /* Cor amarela suave para o visor */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#operation-display {
+  color: #3e2723; /* Cor escura para a operação */
+  font-size: 16px;
+  text-align: right;
+  height: 20px;
+}
+
+#display {
+  width: 100%;
+  font-size: 28px;
+  text-align: right;
+  border: none;
+  background: none;
+  color: #3e2723; /* Cor escura para os números */
+  outline: none;
+}
+
+/* Grid dos botões */
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria quatro colunas */
+  gap: 10px;
+}
+
+/* Botões */
+button {
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Botões de número */
+.number {
+  background-color: #ff9800; /* Cor laranja para os números */
+}
+
+.number:hover {
+  background-color: #f57c00; /* Laranja mais forte quando passar o mouse */
+}
+
+/* Botões de operadores */
+.operator-button {
+  background-color: #ff5722; /* Cor vermelha suave para os operadores */
+  grid-column: 4; /* Garante que os operadores fiquem na quarta coluna */
+}
+
+.operator-button:hover {
+  background-color: #d32f2f; /* Vermelho mais forte para hover */
+}
+
+/* Botões funcionais AC e DEL */
+.func-button {
+  background-color: #f44336; /* Cor vermelha para os botões AC e DEL */
+}
+
+.func-button:hover {
+  background-color: #c62828; /* Vermelho mais forte para hover */
+}
+
+/* Botão de ponto ocupa duas colunas */
+#button-point {
+  grid-column: span 2;
+}
+
+/* Assinatura */
+#signature {
+  text-align: center;
+  font-size: 14px;
+  color: #ff5722; /* Cor vermelha suave para a assinatura */
+  margin-top: 20px;
+  font-family: "Arial", sans-serif;
+}
