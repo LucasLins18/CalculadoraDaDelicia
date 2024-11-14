@@ -13,9 +13,21 @@ backgroundMusic.volume = 0.1; // Som baixo
 let operationSound = new Audio("audio/botão.mp3"); // Som para operações (+ - * /)
 let equalsSound = new Audio("audio/=.mp3"); // Som para "="
 
-// Esperar interação do usuário antes de começar a música
+let musicStarted = false; // Flag para garantir que a música é tocada após a interação
+
+// Função para iniciar a música
+function playBackgroundMusic() {
+  if (!musicStarted) {
+    backgroundMusic.play().catch((error) => {
+      console.error("Erro ao tentar tocar a música:", error);
+    });
+    musicStarted = true;
+  }
+}
+
+// Esperar interação do usuário
 window.addEventListener('click', () => {
-  backgroundMusic.play(); // Tocar música de fundo
+  playBackgroundMusic(); // Começar a música após interação do usuário
 }, { once: true }); // Ouvinte dispara uma vez e depois é removido
 
 // Função para atualizar o display
@@ -97,17 +109,4 @@ function clearDisplay() {
 
 // Função para apagar o último caractere
 function deleteLast() {
-  playOperationSound(); // Toca o som da operação
-  displayValue = displayValue.toString().slice(0, -1);
-  updateDisplay();
-}
-
-// Função para tocar o som da operação (+ - * /)
-function playOperationSound() {
-  operationSound.play();
-}
-
-// Função para tocar o som de "="
-function playEqualsSound() {
-  equalsSound.play();
-}
+  playOperationSound()
