@@ -6,8 +6,20 @@ const display = document.getElementById("display");
 const operationDisplay = document.getElementById("operation-display");
 
 // Sons
-let backgroundMusic = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/musica%20fundo.mp3"); // Música de fundo em loop
-backgroundMusic.loop = true;
+
+// Música tema
+let backgroundMusic = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/musica%20fundo.mp3");
+backgroundMusic.loop = true; // Define para tocar em loop
+
+// Função para tocar/pausar a música
+function playTheme() {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+  } else {
+    backgroundMusic.pause();
+  }
+}
+//Fim da função para tocar/pausar a música
 
 let operationSound = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/bot%C3%A3o.mp3"); // Som para operações (+ - * /)
 let equalsSound = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/=.mp3"); // Som para "="
