@@ -7,35 +7,20 @@ const operationDisplay = document.getElementById("operation-display");
 
 // Sons
 let backgroundMusic = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/musica%20fundo.mp3"); // Música de fundo em loop
-backgroundMusic.loop = true; // Repetir música
+backgroundMusic.loop = true;
 backgroundMusic.volume = 0.1; // Som baixo
 
 let operationSound = new Audio("audio/botão.mp3"); // Som para operações (+ - * /)
 let equalsSound = new Audio("audio/=.mp3"); // Som para "="
 
-let musicStarted = false; // Flag para garantir que a música é tocada após a interação
-
-// Função para iniciar a música
-function playBackgroundMusic() {
-  if (!musicStarted) {
-    backgroundMusic.play().catch((error) => {
-      console.error("Erro ao tentar tocar a música:", error);
-    });
-    musicStarted = true;
-  }
-}
-
-// Esperar interação do usuário
-window.addEventListener('click', () => {
-  playBackgroundMusic(); // Começar a música após interação do usuário
-}, { once: true }); // Ouvinte dispara uma vez e depois é removido
+backgroundMusic.play(); // Iniciar música de fundo
 
 // Função para atualizar o display
 function updateDisplay() {
   display.value = displayValue;
   operationDisplay.textContent =
     previousValue && currentOperation
-      ? `${previousValue} ${currentOperation}`
+      ? ${previousValue} ${currentOperation}
       : "";
 }
 
@@ -123,9 +108,3 @@ function playOperationSound() {
 function playEqualsSound() {
   equalsSound.play();
 }
-
-// Adicionar um botão para iniciar a música de fundo
-const startMusicButton = document.getElementById('start-music-btn');
-startMusicButton.addEventListener('click', function() {
-  playBackgroundMusic();
-});
