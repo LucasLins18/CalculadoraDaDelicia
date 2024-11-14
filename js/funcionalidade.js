@@ -6,13 +6,14 @@ const display = document.getElementById("display");
 const operationDisplay = document.getElementById("operation-display");
 
 // Sons
-let backgroundMusic = new Audio("audio/musica_fundo.mp3");
+let backgroundMusic = new Audio("audio/musica fundo.mp3"); // Música de fundo em loop
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.1; // Som baixo
-backgroundMusic.play(); // Iniciar música de fundo
 
-let operationSound = new Audio("audio/botao.mp3"); // Som para operações (+ - * /)
-let equalsSound = new Audio("audio/igual.mp3"); // Som para "="
+let operationSound = new Audio("audio/botão.mp3"); // Som para operações (+ - * /)
+let equalsSound = new Audio("audio/=.mp3"); // Som para "="
+
+backgroundMusic.play(); // Iniciar música de fundo
 
 // Função para atualizar o display
 function updateDisplay() {
@@ -82,25 +83,28 @@ function calculate() {
   updateDisplay();
 }
 
-// Função para limpar o visor
+// Função para limpar o display
 function clearDisplay() {
+  playOperationSound(); // Toca o som da operação
   displayValue = "";
-  currentOperation = null;
   previousValue = "";
+  currentOperation = null;
   updateDisplay();
 }
 
-// Função para apagar o último número
+// Função para apagar o último caractere
 function deleteLast() {
-  displayValue = displayValue.slice(0, -1);
+  playOperationSound(); // Toca o som da operação
+  displayValue = displayValue.toString().slice(0, -1);
   updateDisplay();
 }
 
-// Funções para tocar os sons
+// Função para tocar o som da operação (+ - * /)
 function playOperationSound() {
   operationSound.play();
 }
 
+// Função para tocar o som de "="
 function playEqualsSound() {
   equalsSound.play();
 }
