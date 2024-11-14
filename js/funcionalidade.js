@@ -13,7 +13,10 @@ backgroundMusic.volume = 0.1; // Som baixo
 let operationSound = new Audio("audio/botão.mp3"); // Som para operações (+ - * /)
 let equalsSound = new Audio("audio/=.mp3"); // Som para "="
 
-backgroundMusic.play(); // Iniciar música de fundo
+// Esperar interação do usuário antes de começar a música
+window.addEventListener('click', () => {
+  backgroundMusic.play(); // Tocar música de fundo
+}, { once: true }); // Ouvinte dispara uma vez e depois é removido
 
 // Função para atualizar o display
 function updateDisplay() {
