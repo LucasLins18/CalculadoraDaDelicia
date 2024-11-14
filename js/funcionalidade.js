@@ -6,14 +6,13 @@ const display = document.getElementById("display");
 const operationDisplay = document.getElementById("operation-display");
 
 // Sons
-let backgroundMusic = new Audio("audio/musica fundo.mp3"); // Música de fundo em loop
+let backgroundMusic = new Audio("audio/musica_fundo.mp3");
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.1; // Som baixo
-
-let operationSound = new Audio("audio/botão.mp3"); // Som para operações (+ - * /)
-let equalsSound = new Audio("audio/=.mp3"); // Som para "="
-
 backgroundMusic.play(); // Iniciar música de fundo
+
+let operationSound = new Audio("audio/botao.mp3"); // Som para operações (+ - * /)
+let equalsSound = new Audio("audio/igual.mp3"); // Som para "="
 
 // Função para atualizar o display
 function updateDisplay() {
@@ -83,4 +82,25 @@ function calculate() {
   updateDisplay();
 }
 
-// Fun
+// Função para limpar o visor
+function clearDisplay() {
+  displayValue = "";
+  currentOperation = null;
+  previousValue = "";
+  updateDisplay();
+}
+
+// Função para apagar o último número
+function deleteLast() {
+  displayValue = displayValue.slice(0, -1);
+  updateDisplay();
+}
+
+// Funções para tocar os sons
+function playOperationSound() {
+  operationSound.play();
+}
+
+function playEqualsSound() {
+  equalsSound.play();
+}
