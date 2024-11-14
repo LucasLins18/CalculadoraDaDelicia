@@ -109,4 +109,23 @@ function clearDisplay() {
 
 // Função para apagar o último caractere
 function deleteLast() {
-  playOperationSound()
+  playOperationSound(); // Toca o som da operação
+  displayValue = displayValue.toString().slice(0, -1);
+  updateDisplay();
+}
+
+// Função para tocar o som da operação (+ - * /)
+function playOperationSound() {
+  operationSound.play();
+}
+
+// Função para tocar o som de "="
+function playEqualsSound() {
+  equalsSound.play();
+}
+
+// Adicionar um botão para iniciar a música de fundo
+const startMusicButton = document.getElementById('start-music-btn');
+startMusicButton.addEventListener('click', function() {
+  playBackgroundMusic();
+});
