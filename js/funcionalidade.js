@@ -83,28 +83,4 @@ function calculate() {
   updateDisplay();
 }
 
-// Função para limpar o display
-function clearDisplay() {
-  displayValue = "";
-  previousValue = "";
-  currentOperation = null;
-  updateDisplay();
-  playOperationSound(); // Toca o som de operação também para o botão AC
-}
-
-// Função para apagar o último caractere
-function deleteLast() {
-  displayValue = displayValue.toString().slice(0, -1);
-  updateDisplay();
-  playOperationSound(); // Toca o som de operação também para o botão DEL
-}
-
-// Função para tocar o som da operação (+ - * /)
-function playOperationSound() {
-  operationSound.play();
-}
-
-// Função para tocar o som de "="
-function playEqualsSound() {
-  equalsSound.play();
-}
+// Fun
