@@ -8,7 +8,7 @@ const operationDisplay = document.getElementById("operation-display");
 // Sons
 let backgroundMusic = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/musica%20fundo.mp3"); // Música de fundo em loop
 backgroundMusic.loop = true;
-backgroundMusic.volume = 0.1; // Som baixo
+backgroundMusic.volume = 0.9; // Som baixo
 
 let operationSound = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/bot%C3%A3o.mp3"); // Som para operações (+ - * /)
 let equalsSound = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/=.mp3"); // Som para "="
