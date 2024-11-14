@@ -6,7 +6,7 @@ const display = document.getElementById("display");
 const operationDisplay = document.getElementById("operation-display");
 
 // Sons
-let backgroundMusic = new Audio("https://lucaslins18.github.io/CalculadoraDaDelicia/audio/musica%20fundo.mp3"); // Música de fundo em loop
+let backgroundMusic = new Audio("audio/musica fundo.mp3"); // Música de fundo em loop
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.1; // Som baixo
 
@@ -20,7 +20,7 @@ function updateDisplay() {
   display.value = displayValue;
   operationDisplay.textContent =
     previousValue && currentOperation
-      ? ${previousValue} ${currentOperation}
+      ? `${previousValue} ${currentOperation}`
       : "";
 }
 
@@ -85,18 +85,18 @@ function calculate() {
 
 // Função para limpar o display
 function clearDisplay() {
-  playOperationSound(); // Toca o som da operação
   displayValue = "";
   previousValue = "";
   currentOperation = null;
   updateDisplay();
+  playOperationSound(); // Toca o som de operação também para o botão AC
 }
 
 // Função para apagar o último caractere
 function deleteLast() {
-  playOperationSound(); // Toca o som da operação
   displayValue = displayValue.toString().slice(0, -1);
   updateDisplay();
+  playOperationSound(); // Toca o som de operação também para o botão DEL
 }
 
 // Função para tocar o som da operação (+ - * /)
